@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo Ravaioli | Avionics & Embedded Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 { color: #fff; margin-bottom: 5px; }
+        .subtitle { color: var(--accent-color); font-weight: 600; }
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .viewer-container {
+            width: 100%;
+            height: 450px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lorenzo Ravaioli</h1>
+            <p class="subtitle">Aerospace Engineering Student @ Università di Bologna</p>
+            <p>Specializing in Avionics, PCB/RF Design, and Embedded Systems for Competitive Rocketry.</p>
+        </header>
+
+        <section>
+            <h2>Featured Avionics Projects</h2>
+
+            <!-- PROGETTO 1: SCHEDA V2 -->
+            <div class="project-card">
+                <h3>Dual-Configuration Avionics & RF Telemetry Board (Rocket #2)</h3>
+                <p>High-density 4-layer PCB featuring redundant GPS/RF architecture, ESP32-S3 microcontroller, and 0402 SMD passive assembly.</p>
+                
+                <!-- INSERISCI QUI L'EMBED DI ALTIUM 365 -->
+                <div class="viewer-container">
+                    <!-- Sostituisci il tag iframe qui sotto con quello generato da Altium Viewer -->
+                    <iframe src="https://altium365.com/embed-example-link"></iframe>
+                </div>
+            </div>
+
+            <!-- PROGETTO 2: SCHEDA V1 -->
+            <div class="project-card">
+                <h3>Early Telemetry & E-Match Recovery Board (EuRoC 2025)</h3>
+                <p>Custom flight-proven avionics board for telemetry acquisition and recovery deployment flown at EuRoC 2025 in Portugal.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
