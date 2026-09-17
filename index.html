@@ -3,83 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lorenzo Ravaioli | Avionics & Embedded Portfolio</title>
+    <title>Lorenzo Ravaioli — Aerospace Engineering</title>
     <style>
         :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
+            --bg-1: #050805;
+            --bg-2: #0c1a12;
+            --bg-3: #12291b;
+            --text-primary: #e8f0e9;
+            --text-secondary: #9fb5a5;
+            --accent: #3ddc84;
+            --accent-dim: #1a5c38;
+            --panel: rgba(255, 255, 255, 0.03);
+            --border: rgba(61, 220, 132, 0.15);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-primary);
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
+            background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 55%, var(--bg-3) 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
+            padding: 0 24px;
         }
-        header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border);
         }
-        h1 { color: #fff; margin-bottom: 5px; }
-        .subtitle { color: var(--accent-color); font-weight: 600; }
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: clamp(1.7rem, 4vw, 2.4rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 40px;
+        }
+
+        .lead {
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        .hero .lead {
+            margin-bottom: 0;
+        }
+
+        .scroll-hint {
+            margin-top: 80px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .about p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin-bottom: 24px;
+        }
+
+        .about p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .swatch {
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: var(--panel);
+            backdrop-filter: blur(4px);
+        }
+
+        .swatch .color {
+            height: 56px;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 12px;
         }
-        .viewer-container {
-            width: 100%;
-            height: 450px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-top: 15px;
-            overflow: hidden;
+
+        .swatch .name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
         }
-        iframe { width: 100%; height: 100%; border: none; }
-        a { color: var(--accent-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+
+        .swatch .hex {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+        }
+
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Lorenzo Ravaioli</h1>
-            <p class="subtitle">Aerospace Engineering Student @ Università di Bologna</p>
-            <p>Specializing in Avionics, PCB/RF Design, and Embedded Systems for Competitive Rocketry.</p>
-        </header>
+        <section class="hero">
+            <p class="eyebrow">Lorenzo Ravaioli</p>
+            <h1>Aerospace Engineering Student<br>Building Things That Fly</h1>
+            <p class="lead">I'm Lorenzo, a 23-year-old aerospace engineering student at the University of Bologna, focused on avionics, embedded systems, and electronics for rocketry.</p>
+            <p class="scroll-hint">Scroll to explore</p>
+        </section>
 
-        <section>
-            <h2>Featured Avionics Projects</h2>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I'm a <strong>23-year-old aerospace engineering student</strong> at the <strong>University of Bologna</strong>. My main focus is everything that flies: designing and building the electronics that make rockets work.</p>
+            <p>My work centers on <strong>avionics</strong>, <strong>embedded systems</strong>, and <strong>PCB design</strong> — from high-density flight computers to telemetry and recovery systems that survive real launch conditions.</p>
+        </section>
 
-            <!-- PROGETTO 1: SCHEDA V2 -->
-            <div class="project-card">
-                <h3>Dual-Configuration Avionics & RF Telemetry Board (Rocket #2)</h3>
-                <p>High-density 4-layer PCB featuring redundant GPS/RF architecture, ESP32-S3 microcontroller, and 0402 SMD passive assembly.</p>
-                
-                <!-- INSERISCI QUI L'EMBED DI ALTIUM 365 -->
-                <div class="viewer-container">
-                    <!-- Sostituisci il tag iframe qui sotto con quello generato da Altium Viewer -->
-                    <iframe src="https://altium365.com/embed-example-link"></iframe>
+        <section class="colors">
+            <h2>Color Palette</h2>
+            <div class="palette">
+                <div class="swatch">
+                    <div class="color" style="background: #050805;"></div>
+                    <div class="name">Forest Black</div>
+                    <div class="hex">#050805</div>
+                </div>
+                <div class="swatch">
+                    <div class="color" style="background: #12291b;"></div>
+                    <div class="name">Deep Moss</div>
+                    <div class="hex">#12291b</div>
+                </div>
+                <div class="swatch">
+                    <div class="color" style="background: #3ddc84;"></div>
+                    <div class="name">Spring Green</div>
+                    <div class="hex">#3ddc84</div>
+                </div>
+                <div class="swatch">
+                    <div class="color" style="background: #e8f0e9;"></div>
+                    <div class="name">Cloud White</div>
+                    <div class="hex">#e8f0e9</div>
                 </div>
             </div>
-
-            <!-- PROGETTO 2: SCHEDA V1 -->
-            <div class="project-card">
-                <h3>Early Telemetry & E-Match Recovery Board (EuRoC 2025)</h3>
-                <p>Custom flight-proven avionics board for telemetry acquisition and recovery deployment flown at EuRoC 2025 in Portugal.</p>
-            </div>
         </section>
+
+        <footer>
+            <p>&copy; 2026 Lorenzo Ravaioli</p>
+        </footer>
     </div>
 </body>
 </html>
